@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleform.css">
+</head>
+<body>
+    <h2><b>BOOK AN APPOINTMENT NOW!</b></h2>
+    <h3><i>Health is real wealth.</i></h3>
+    <form id="My-form">
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname"required><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname"required><br>
+        <label for="gen">Gender:</label><br>
+        <select id="gen" name="gen">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br>
+        <label for="date">DOB:</label><br>
+        <input type="date" id="date" name="date"required><br>
+        <label for="num">Contact Number:</label><br>
+        <input type="tel" id="num" name="num" placeholder="123-4567-890"required><br>
+        <label for="mail">Email-Id:</label><br>
+        <input type="email" id="mail" name="mail"><br>
+        <label for="date-time">Date & Time:</label><br>
+        <input type="datetime-local" id="date-time" name="date-time"required><br>
+        <label for="phy">Physician's Name:</label><br>
+        <input type="text" id="phy" name="phy"required><br>
+        <button type="submit"value="Submit">Submit</button>
+        
+    </form>
+    <script>
+        let myform = document.getElementById("My-form");
+        myform.addEventListener('submit',signup);
+        function signup(e){
+            e.preventDefault();
+            const fname = document.getElementById("fname").value;
+            console.log(fname);
+            const lname = document.getElementById("lname").value;
+            console.log(lname);
+            const gender = document.getElementById("gen").value;
+            console.log(gender);
+            const date = document.getElementById("date").value;
+            console.log(date);
+            const contact = document.getElementById("num").value;
+            console.log(contact);
+            const email = document.getElementById("mail").value;
+            console.log(email);
+            const time = document.getElementById("date-time").value;
+            console.log(time);
+            const phyname = document.getElementById("phy").value;
+            console.log(phyname);
+            myform.reset();
+        }
+
+    </script>
+</body>
+</html>
