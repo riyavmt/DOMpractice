@@ -31,21 +31,30 @@
        </div>
       </div>
       <script>
-        const title = document.getElementById("main-header")
-        console.log(title)
-        title.style.border = "solid 1px #000"
-        title.style.color = "green"
+        //const title = document.getElementById("main-header")
+        //console.log(title)
+        //title.style.border = "solid 1px #000"
+        //title.style.color = "green"
 
-        const items = document.getElementsByClassName("list-group-item")
+        //const items = document.getElementsByClassName("list-group-item")
         
 
-        const li = document.getElementsByTagName("li")
-        li[2].style.backgroundColor = "green"
-        for(var i=0; i<li.length; i++){
-          li[i].style.fontWeight = "bold"
-          li[i].style.color = "blue"
-          li[i].style.fontFamily = "'Times New Roman', Times, serif"
-        }
+          
+            //const li = document.getElementsByTagName("li")
+            //li[2].style.backgroundColor = "green"
+            //for(var i=0; i<li.length; i++){
+            //  li[i].style.fontWeight = "bold"
+            //  li[i].style.color = "blue"
+            //  li[i].style.fontFamily = "'Times New Roman', Times, serif"
+            //}
+        
+
+        const items = document.querySelector(".list-group-item:nth-child(2)")
+        items.style.backgroundColor = "green"
+
+        const thirditem = document.querySelector(".list-group-item:nth-child(3)")
+        thirditem.style.display = "none"
+        
 
         
       </script>
