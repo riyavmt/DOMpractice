@@ -34,6 +34,14 @@
         console.log(title)
         title.style.border = "solid 1px #000"
         title.style.color = "green"
+
+        const items = document.getElementsByClassName("list-group-item")
+        items[2].style.backgroundColor = "green"
+        for(var i=0; i<items.length; i++){
+          items[i].style.fontWeight = "bold"
+          items[i].style.color = "blue"
+          
+        }
       </script>
 </body>
 </html>
