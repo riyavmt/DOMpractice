@@ -26,6 +26,7 @@
           <li class="list-group-item">Item 2</li>
           <li class="list-group-item">Item 3</li>
           <li class="list-group-item">Item 4</li>
+          <li class="list-group-item">Item 5</li>
         </ul>
        </div>
       </div>
@@ -36,12 +37,17 @@
         title.style.color = "green"
 
         const items = document.getElementsByClassName("list-group-item")
-        items[2].style.backgroundColor = "green"
-        for(var i=0; i<items.length; i++){
-          items[i].style.fontWeight = "bold"
-          items[i].style.color = "blue"
-          
+        
+
+        const li = document.getElementsByTagName("li")
+        li[2].style.backgroundColor = "green"
+        for(var i=0; i<li.length; i++){
+          li[i].style.fontWeight = "bold"
+          li[i].style.color = "blue"
+          li[i].style.fontFamily = "'Times New Roman', Times, serif"
         }
+
+        
       </script>
 </body>
 </html>
