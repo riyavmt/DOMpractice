@@ -25,7 +25,9 @@
     <h2 class="title">Add Items</h2>
     <form id="addForm" class="form-inline mb-3">
       <input type="text" class="form-control mr-2" id="item">
+      <input type="text" class="form-control mr-2" id="des">
       <input type="submit" class="btn btn-dark" value="Submit">
+      
     </form>
     <h2 class="title">Items</h2>
     <ul id="items" class="list-group">
@@ -37,6 +39,7 @@
    </div>
   </div>
       <script>
+        let myform = document.getElementById("addForm");
         //const title = document.getElementById("main-header")
         //console.log(title)
         //title.style.border = "solid 1px #000"
@@ -96,11 +99,13 @@
 
 var form = document.getElementById('addForm');
 var itemList = document.getElementById('items');
-
+var desList = document.getElementById('des');
+var filter = document.getElementById('filter');
 // Form submit event
 form.addEventListener('submit', addItem);
 // Delete event
 itemList.addEventListener('click', removeItem);
+filter.addEventListener('keyup',filterItems );
 
 // Add item
 function addItem(e){
@@ -108,13 +113,14 @@ function addItem(e){
 
   // Get input value
   var newItem = document.getElementById('item').value;
+  var newDes = document.getElementById('des').value;
 
   // Create new li element
   var li = document.createElement('li');
   // Add class
   li.className = 'list-group-item';
   // Add text node with input value
-  li.appendChild(document.createTextNode(newItem));
+  li.appendChild(document.createTextNode(newItem+" "+ newDes));
 
   // Create del button element
   var deleteBtn = document.createElement('button');
@@ -158,9 +164,21 @@ function removeItem(e){
     }
   }
 }
+function filterItems(e){
+  var text = e.target.value.toLowerCase();
+  var items = itemList.getElementsByTagName("li");
+  Array.from(items).forEach(function(item){
+    var itemName = item.firstChild.textContent;
+    if(itemName.toLowerCase().indexOf(text)!== -1){
+      item.style.display = "block";
+    }
+    else{
+      item.style.display = "none";
+    }
+  })
+}
 
-
-
+myform.reset();
     </script>
 </body>
 </html>
